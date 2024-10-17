@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Hunter</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header>
+        <h3 class="text-4xl text-red-500 font-bold font-mono text-center mt-5 mb-3">Phone Hunter</h3>
+    </header>
+    <main>
+
+        <section class="container mx-auto">
+            <input id="search-field" type="text" placeholder="Search here..."
+                class="input input-bordered w-full max-w-xs" />
+            <button onclick="handleSearch()" class="btn btn-info">Search</button>
+        </section>
+
+        <!-- phone display -->
+        <section>
+            <!-- spinner loading -->
+            <div id="spinner" class="text-center hidden">
+                <span class="loading text-primary loading-spinner loading-lg"></span>
+            </div>
+            <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+
+            </div>
+            <!-- showall phones button -->
+            <div id="Showall-Button" class="hidden text-center mt-3">
+                <button onclick="handleShowAll()" class="btn btn-active btn-accent">Show All</button>
+            </div>
+        </section>
+
+        <!-- show details modal -->
+        <!-- Open the modal using ID.showModal() method -->
+        <dialog id="show_details_modal" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box">
+                <h3 id="show-detail-phone-name" class="text-2xl font-bold"></h3>
+                <div id="show-detail-container">
+
+                </div>
+                <div class="modal-action">
+                    <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn">Close</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
+
+    </main>
+    <footer>
+
+    </footer>
+    <script src="js/hunter.js"></script>
+</body>
+
+</html>
